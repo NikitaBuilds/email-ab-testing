@@ -2,8 +2,7 @@
 
 A modern dashboard for managing and analyzing email marketing A/B tests, built with Next.js 14, Tailwind CSS, and shadcn/ui components.
 
-![Dashboard Preview]
-(Add a screenshot of your dashboard here)
+![alt text](<Screenshot 2024-11-20 at 22.24.09.png>)
 
 ## Features
 
