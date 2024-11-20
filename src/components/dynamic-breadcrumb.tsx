@@ -40,7 +40,7 @@ export function DynamicBreadcrumb() {
           <BreadcrumbLink href="/dashboard">Home</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
-        {breadcrumbs.map((crumb, index) => (
+        {breadcrumbs.map((crumb) => (
           <React.Fragment key={crumb.href}>
             <BreadcrumbItem>
               {crumb.isLast ? (

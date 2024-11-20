@@ -129,7 +129,7 @@ export function CampaignPerformance() {
                 <ChartTooltipContent
                   className="w-[150px]"
                   nameKey="openRate"
-                  labelFormatter={(value: any) => {
+                  labelFormatter={(value: string) => {
                     return new Date(value).toLocaleDateString("en-US", {
                       month: "short",
                       day: "numeric",

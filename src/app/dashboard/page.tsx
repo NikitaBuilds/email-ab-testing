@@ -2,7 +2,7 @@
 
 import { StatsGrid } from "@/components/stats-grid";
 import { RecentTests } from "@/components/tests/recent-tests";
-import { Test } from "@/types/test";
+
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import { CampaignPerformance } from "@/components/campaign-performance";

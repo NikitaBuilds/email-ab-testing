@@ -9,11 +9,8 @@ import {
   BarChart,
   Settings2,
   HelpCircle,
-  Send,
   Inbox,
   Clock,
-  Tag,
-  AlertCircle,
   BookOpen,
   CreditCard,
 } from "lucide-react";

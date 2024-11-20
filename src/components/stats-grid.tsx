@@ -1,7 +1,7 @@
 // src/components/dashboard/stats-grid.tsx
 import { cn } from "@/lib/utils";
 import { KpiCard } from "./kpi-card";
-import { Users, Mail, MousePointer, Activity } from "lucide-react";
+import { Users, Mail, MousePointer } from "lucide-react";
 
 interface StatsData {
   subscribers: number;
