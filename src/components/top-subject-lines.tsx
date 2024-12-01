@@ -1,8 +1,6 @@
-// src/components/dashboard/top-subject-lines.tsx
-"use client";
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 
 interface SubjectLine {
   id: string;
@@ -58,42 +56,46 @@ export function TopSubjectLines({
         <CardTitle>Top Performing Subject Lines</CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="space-y-4">
-          {subjectLines.map((subject) => (
-            <div
-              key={subject.id}
-              className="flex flex-col space-y-2 rounded-lg border p-3"
-            >
-              <div className="flex items-start justify-between">
-                <div className="space-y-1">
-                  <p className="font-medium">{subject.text}</p>
-                  <div className="flex gap-1 flex-wrap">
-                    {subject.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary">
-                        {tag}
-                      </Badge>
-                    ))}
+        <Table>
+          <TableBody>
+            {subjectLines.map((subject) => (
+              <TableRow
+                key={subject.id}
+                className="hover:bg-muted/50 transition-colors"
+              >
+                <TableCell className="align-top">
+                  <div className="space-y-2">
+                    <p className="font-medium">{subject.text}</p>
+                    <div className="flex gap-1 flex-wrap">
+                      {subject.tags.map((tag) => (
+                        <Badge
+                          key={tag}
+                          variant="secondary"
+                          className="text-xs"
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
-                </div>
-                <div className="flex gap-4 text-sm">
-                  <div className="text-right">
-                    <p className="text-muted-foreground">Open Rate</p>
-                    <p className="font-medium">
-                      {(subject.openRate * 100).toFixed(1)}%
-                    </p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-muted-foreground">Click Rate</p>
-                    <p className="font-medium">
-                      {(subject.clickRate * 100).toFixed(1)}%
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+                </TableCell>
+                <TableCell className="text-right whitespace-nowrap">
+                  <CardTitle className="opacity-50">Open Rate</CardTitle>
+                  <p className="font-bold">
+                    {(subject.openRate * 100).toFixed(1)}%
+                  </p>
+                  <CardTitle className="opacity-50">Click Rate</CardTitle>
+                  <p className="font-bold">
+                    {(subject.clickRate * 100).toFixed(1)}%
+                  </p>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </CardContent>
     </Card>
   );
 }
+
+export default TopSubjectLines;
